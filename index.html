@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JOX | Gestión Vehicular</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="logo">
+            <span>JOX</span>
+        </div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#vehiculo">Mi vehículo</a>
+            <a href="#mantenimiento">Mantenimiento</a>
+            <a href="#educacion">Educación</a>
+        </nav>
+
+        <button class="btn-login">
+            Iniciar sesión
+        </button>
+
+    </header>
+
+
+    <!-- VISTA 1: DASHBOARD -->
+    <main id="inicio">
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="tag">
+                    PLATAFORMA DE GESTIÓN VEHICULAR
+                </p>
+
+                <h1>
+                    Tu vehículo.<br>
+                    Tu mantenimiento.<br>
+                    <span>Tu control.</span>
+                </h1>
+
+                <p class="hero-text">
+                    JOX te ayuda a organizar el mantenimiento de tu vehículo,
+                    consultar su historial y aprender sobre cuidado automotriz.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button class="btn-primary">
+                        Registrar vehículo
+                    </button>
+
+                    <button class="btn-secondary">
+                        Explorar educación
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="vehicle-card">
+
+                <div class="card-header">
+                    <span>MI VEHÍCULO</span>
+                    <span class="status">● ACTIVO</span>
+                </div>
+
+                <div class="vehicle-info">
+
+                    <div class="vehicle-icon">
+                        🚗
+                    </div>
+
+                    <div>
+                        <h2>Vehículo registrado</h2>
+                        <p>Marca / Modelo / Año</p>
+                    </div>
+
+                </div>
+
+                <div class="mileage">
+
+                    <span>KILOMETRAJE</span>
+
+                    <strong>0 km</strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ESTADÍSTICAS -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <span>🚗</span>
+                <h3>1</h3>
+                <p>Vehículo registrado</p>
+            </div>
+
+            <div class="stat-card">
+                <span>🔧</span>
+                <h3>0</h3>
+                <p>Mantenimientos</p>
+            </div>
+
+            <div class="stat-card">
+                <span>📋</span>
+                <h3>0</h3>
+                <p>Reparaciones</p>
+            </div>
+
+            <div class="stat-card">
+                <span>🔔</span>
+                <h3>0</h3>
+                <p>Alertas</p>
+            </div>
+
+        </section>
+
+
+        <!-- MANTENIMIENTO -->
+
+        <section id="mantenimiento" class="section">
+
+            <div class="section-title">
+
+                <div>
+                    <p class="tag">CONTROL</p>
+
+                    <h2>
+                        Próximos mantenimientos
+                    </h2>
+                </div>
+
+                <button class="outline-button">
+                    Ver mantenimiento
+                </button>
+
+            </div>
+
+
+            <div class="maintenance-grid">
+
+                <article class="maintenance-card">
+
+                    <div class="maintenance-icon">
+                        🛢️
+                    </div>
+
+                    <div>
+                        <h3>Cambio de aceite</h3>
+                        <p>Próximo mantenimiento</p>
+                    </div>
+
+                    <strong>
+                        Pendiente
+                    </strong>
+
+                </article>
+
+
+                <article class="maintenance-card">
+
+                    <div class="maintenance-icon">
+                        🛑
+                    </div>
+
+                    <div>
+                        <h3>Revisión de frenos</h3>
+                        <p>Próximo mantenimiento</p>
+                    </div>
+
+                    <strong>
+                        Pendiente
+                    </strong>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- HISTORIAL -->
+
+        <section id="vehiculo" class="section">
+
+            <div class="section-title">
+
+                <div>
+
+                    <p class="tag">
+                        HISTORIAL
+                    </p>
+
+                    <h2>
+                        Historial de reparaciones
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="history-card">
+
+                <div class="history-header">
+                    <span>Fecha</span>
+                    <span>Servicio</span>
+                    <span>Kilometraje</span>
+                    <span>Estado</span>
+                </div>
+
+                <div class="empty-history">
+
+                    <span>📋</span>
+
+                    <h3>
+                        No hay reparaciones registradas
+                    </h3>
+
+                    <p>
+                        Cuando registres un mantenimiento aparecerá aquí.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- VISTA 2: EDUCACIÓN -->
+
+        <section id="educacion" class="education">
+
+            <div class="education-heading">
+
+                <p class="tag">
+                    APRENDE
+                </p>
+
+                <h2>
+                    Educación automotriz
+                </h2>
+
+                <p>
+                    Aprende sobre mantenimiento preventivo,
+                    reparaciones básicas y fallas comunes.
+                </p>
+
+            </div>
+
+
+            <div class="education-grid">
+
+                <article class="education-card">
+
+                    <div class="education-image">
+                        🔧
+                    </div>
+
+                    <div class="education-content">
+
+                        <span>
+                            TUTORIAL
+                        </span>
+
+                        <h3>
+                            Mantenimiento básico
+                        </h3>
+
+                        <p>
+                            Aprende las principales tareas de mantenimiento
+                            que puedes realizar en tu vehículo.
+                        </p>
+
+                        <button>
+                            Ver tutorial →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="education-card">
+
+                    <div class="education-image">
+                        🛠️
+                    </div>
+
+                    <div class="education-content">
+
+                        <span>
+                            GUÍA
+                        </span>
+
+                        <h3>
+                            Cuidado preventivo
+                        </h3>
+
+                        <p>
+                            Conoce cómo prevenir problemas y mantener
+                            tu vehículo en mejores condiciones.
+                        </p>
+
+                        <button>
+                            Ver guía →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="education-card">
+
+                    <div class="education-image">
+                        ⚠️
+                    </div>
+
+                    <div class="education-content">
+
+                        <span>
+                            DIAGNÓSTICO
+                        </span>
+
+                        <h3>
+                            Fallas comunes
+                        </h3>
+
+                        <p>
+                            Identifica señales y problemas frecuentes
+                            que pueden presentarse en un vehículo.
+                        </p>
+
+                        <button>
+                            Aprender →
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            JOX
+        </div>
+
+        <p>
+            Gestión vehicular y aprendizaje automotriz.
+        </p>
+
+        <p>
+            CUN · Ingeniería de Sistemas · 2026
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
