@@ -1,0 +1,1141 @@
+/* ==========================================
+   JOX - STYLE.CSS
+   Gestión vehicular y educación automotriz
+   ========================================== */
+
+:root {
+    --bg: #0b0d10;
+    --bg-secondary: #11151a;
+    --card: #161b21;
+    --card-hover: #1b2229;
+
+    --primary: #ff6b00;
+    --primary-light: #ff8a33;
+
+    --text: #f4f4f5;
+    --text-secondary: #a1a7af;
+    --text-muted: #6f7780;
+
+    --border: #262d35;
+    --success: #35d07f;
+    --danger: #ff4d4d;
+
+    --radius: 16px;
+    --max-width: 1200px;
+
+    --shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ==========================================
+   RESET
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ==========================================
+   NAVBAR
+   ========================================== */
+
+.navbar {
+    width: 100%;
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(11, 13, 16, 0.94);
+    backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+/* LOGO */
+
+.logo span {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--primary);
+}
+
+
+/* NAVEGACIÓN */
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.navbar nav a {
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.navbar nav a:hover {
+    color: var(--primary);
+}
+
+
+/* BOTÓN LOGIN */
+
+.btn-login {
+    padding: 10px 20px;
+
+    background: transparent;
+    color: var(--text);
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.btn-login:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+
+/* ==========================================
+   HERO
+   ========================================== */
+
+.hero {
+    max-width: var(--max-width);
+
+    min-height: 620px;
+
+    margin: 0 auto;
+    padding: 100px 30px 70px;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+
+    align-items: center;
+    gap: 80px;
+}
+
+
+/* CONTENIDO HERO */
+
+.hero-content {
+    max-width: 650px;
+}
+
+.tag {
+    color: var(--primary);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    margin-bottom: 14px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 72px);
+
+    line-height: 1.02;
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero-text {
+    max-width: 570px;
+
+    color: var(--text-secondary);
+
+    font-size: 17px;
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+
+/* BOTONES HERO */
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 14px 22px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+
+/* PRIMARIO */
+
+.btn-primary {
+    background: var(--primary);
+    color: #111;
+
+    border: 1px solid var(--primary);
+
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.18);
+}
+
+.btn-primary:hover {
+    background: var(--primary-light);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 12px 30px rgba(255, 107, 0, 0.28);
+}
+
+
+/* SECUNDARIO */
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text);
+
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   TARJETA DEL VEHÍCULO
+   ========================================== */
+
+.vehicle-card {
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        #191f26,
+        #101419
+    );
+
+    border: 1px solid var(--border);
+    border-radius: 22px;
+
+    padding: 30px;
+
+    box-shadow: var(--shadow);
+}
+
+.vehicle-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    background: var(--primary);
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    opacity: 0.08;
+
+    top: -70px;
+    right: -50px;
+}
+
+
+/* HEADER VEHÍCULO */
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 22px;
+
+    border-bottom: 1px solid var(--border);
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.status {
+    color: var(--success);
+}
+
+
+/* INFORMACIÓN */
+
+.vehicle-info {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 35px 0;
+}
+
+.vehicle-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 107, 0, 0.1);
+
+    border: 1px solid rgba(255, 107, 0, 0.2);
+
+    border-radius: 14px;
+
+    font-size: 30px;
+}
+
+.vehicle-info h2 {
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+.vehicle-info p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+
+/* KILOMETRAJE */
+
+.mileage {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 22px;
+
+    border-top: 1px solid var(--border);
+}
+
+.mileage span {
+    color: var(--text-muted);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.mileage strong {
+    color: var(--primary);
+    font-size: 24px;
+}
+
+
+/* ==========================================
+   ESTADÍSTICAS
+   ========================================== */
+
+.stats {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 0 30px 90px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.stat-card {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 25px;
+
+    transition: 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(255, 107, 0, 0.35);
+
+    background: var(--card-hover);
+}
+
+.stat-card > span {
+    display: block;
+
+    font-size: 24px;
+
+    margin-bottom: 12px;
+}
+
+.stat-card h3 {
+    font-size: 32px;
+
+    margin-bottom: 2px;
+}
+
+.stat-card p {
+    color: var(--text-secondary);
+
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   SECCIONES
+   ========================================== */
+
+.section {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 90px 30px;
+}
+
+.section-title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    line-height: 1.15;
+}
+
+
+/* BOTÓN OUTLINE */
+
+.outline-button {
+    padding: 11px 18px;
+
+    background: transparent;
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    color: var(--text);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.outline-button:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+
+/* ==========================================
+   MANTENIMIENTO
+   ========================================== */
+
+.maintenance-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.maintenance-card {
+    display: grid;
+
+    grid-template-columns: auto 1fr auto;
+
+    align-items: center;
+
+    gap: 18px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 22px;
+
+    transition: 0.3s ease;
+}
+
+.maintenance-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(255, 107, 0, 0.3);
+}
+
+.maintenance-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 107, 0, 0.08);
+
+    border-radius: 12px;
+
+    font-size: 22px;
+}
+
+.maintenance-card h3 {
+    font-size: 16px;
+
+    margin-bottom: 3px;
+}
+
+.maintenance-card p {
+    color: var(--text-muted);
+
+    font-size: 12px;
+}
+
+.maintenance-card > strong {
+    color: var(--primary);
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ==========================================
+   HISTORIAL
+   ========================================== */
+
+.history-card {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+}
+
+.history-header {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    padding: 18px 25px;
+
+    background: #12171c;
+
+    border-bottom: 1px solid var(--border);
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.empty-history {
+    min-height: 260px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px;
+}
+
+.empty-history > span {
+    font-size: 35px;
+
+    opacity: 0.7;
+
+    margin-bottom: 12px;
+}
+
+.empty-history h3 {
+    font-size: 17px;
+
+    margin-bottom: 5px;
+}
+
+.empty-history p {
+    color: var(--text-muted);
+
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   EDUCACIÓN
+   ========================================== */
+
+.education {
+    background: #0e1115;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    padding: 100px 30px;
+}
+
+.education-heading {
+    max-width: var(--max-width);
+
+    margin: 0 auto 50px;
+}
+
+.education-heading h2 {
+    font-size: 42px;
+
+    margin-bottom: 12px;
+}
+
+.education-heading > p:last-child {
+    max-width: 600px;
+
+    color: var(--text-secondary);
+
+    font-size: 15px;
+}
+
+
+/* GRID EDUCACIÓN */
+
+.education-grid {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* TARJETAS EDUCACIÓN */
+
+.education-card {
+    overflow: hidden;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    transition: 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(255, 107, 0, 0.35);
+
+    box-shadow: var(--shadow);
+}
+
+
+/* IMAGEN */
+
+.education-image {
+    height: 150px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #1a2027,
+        #11151a
+    );
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 50px;
+}
+
+
+/* CONTENIDO */
+
+.education-content {
+    padding: 25px;
+}
+
+.education-content > span {
+    color: var(--primary);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.education-content h3 {
+    font-size: 20px;
+
+    margin: 8px 0 10px;
+}
+
+.education-content p {
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+.education-content button {
+    background: transparent;
+
+    border: none;
+
+    color: var(--primary);
+
+    font-size: 13px;
+    font-weight: 800;
+
+    padding: 0;
+
+    transition: 0.2s ease;
+}
+
+.education-content button:hover {
+    color: var(--primary-light);
+
+    transform: translateX(4px);
+}
+
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+footer {
+    padding: 60px 30px;
+
+    text-align: center;
+
+    border-top: 1px solid var(--border);
+
+    background: var(--bg);
+}
+
+.footer-logo {
+    color: var(--primary);
+
+    font-size: 26px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: var(--text-muted);
+
+    font-size: 12px;
+
+    margin-top: 5px;
+}
+
+
+/* ==========================================
+   ANIMACIÓN DE APARICIÓN
+   ========================================== */
+
+.stat-card,
+.maintenance-card,
+.education-card {
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.stat-card.visible,
+.maintenance-card.visible,
+.education-card.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   SELECCIÓN DE TEXTO
+   ========================================== */
+
+::selection {
+    background: var(--primary);
+    color: #111;
+}
+
+
+/* ==========================================
+   SCROLLBAR
+   ========================================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #303740;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 0 25px;
+    }
+
+    .navbar nav {
+        gap: 18px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        padding-top: 70px;
+    }
+
+    .vehicle-card {
+        max-width: 600px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .education-card:last-child {
+        grid-column: span 2;
+    }
+}
+
+
+/* ==========================================
+   CELULAR
+   ========================================== */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        height: auto;
+
+        padding: 18px 20px;
+
+        flex-wrap: wrap;
+
+        gap: 18px;
+    }
+
+    .navbar nav {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 15px;
+
+        overflow-x: auto;
+
+        padding-bottom: 3px;
+    }
+
+    .navbar nav a {
+        white-space: nowrap;
+
+        font-size: 12px;
+    }
+
+    .btn-login {
+        padding: 8px 13px;
+
+        font-size: 12px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding: 65px 20px 50px;
+
+        min-height: auto;
+
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .hero-text {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    /* VEHÍCULO */
+
+    .vehicle-card {
+        padding: 22px;
+    }
+
+    .vehicle-info {
+        padding: 28px 0;
+    }
+
+
+    /* ESTADÍSTICAS */
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+
+        padding: 0 20px 60px;
+
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 18px;
+    }
+
+    .stat-card h3 {
+        font-size: 27px;
+    }
+
+
+    /* SECCIONES */
+
+    .section {
+        padding: 65px 20px;
+    }
+
+    .section-title {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+
+    /* MANTENIMIENTO */
+
+    .maintenance-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .maintenance-card {
+        grid-template-columns: auto 1fr;
+    }
+
+    .maintenance-card > strong {
+        grid-column: 2;
+    }
+
+
+    /* HISTORIAL */
+
+    .history-header {
+        grid-template-columns: repeat(4, 120px);
+
+        overflow-x: auto;
+
+        font-size: 9px;
+    }
+
+    .history-card {
+        overflow-x: auto;
+    }
+
+    .empty-history {
+        min-width: 500px;
+    }
+
+
+    /* EDUCACIÓN */
+
+    .education {
+        padding: 70px 20px;
+    }
+
+    .education-heading h2 {
+        font-size: 32px;
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .education-card:last-child {
+        grid-column: auto;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 45px 20px;
+    }
+}
+
+
+/* ==========================================
+   CELULAR PEQUEÑO
+   ========================================== */
+
+@media (max-width: 400px) {
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .vehicle-info h2 {
+        font-size: 18px;
+    }
+
+    .mileage strong {
+        font-size: 20px;
+    }
+}
